@@ -1,0 +1,76 @@
+---
+const navLinks = [
+  { href: "#how-we-work", text: "How we work" },
+  { href: "#projects", text: "Projects" },
+  { href: "#blog", text: "Blog" },
+];
+const logoUrl = "/librecollab.svg";
+const siteName = "LibreCollab";
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 py-4 md:py-5 px-4 sm:px-6 lg:py-8 lg:px-20"
+>
+  <div class="max-w-8xl mx-auto">
+    <div
+      class="relative flex h-14 items-center justify-between rounded-xl px-4 text-slate-100 ring-1 ring-white/10 backdrop-blur-lg md:h-20 md:px-6"
+    >
+      <div class="flex flex-shrink-0 items-center">
+        <a href="/" class="flex items-center gap-x-2.5">
+          <img class="h-7 w-auto md:h-13" src={logoUrl} alt={siteName} />
+          <span class="text-xl font-bold tracking-tight text-white md:text-2xl">
+            {siteName}
+          </span>
+        </a>
+      </div>
+      <nav class="hidden items-center md:flex">
+        <ul
+          class="flex items-center space-x-1 text-lg font-medium lg:space-x-2"
+        >
+          {
+            navLinks.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="rounded-md px-3 py-2 text-slate-300 transition-colors duration-200 hover:text-white"
+                >
+                  {link.text}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <a
+          href="#contact"
+          class="ml-3 rounded-lg bg-emerald-700 px-4 py-2 text-lg font-semibold text-white shadow-md transition-all duration-200 hover:bg-emerald-600 hover:shadow-lg md:px-5 md:py-2.5 lg:ml-4"
+        >
+          Contact
+        </a>
+      </nav>
+      <div class="flex items-center md:hidden">
+        <button
+          type="button"
+          class="inline-flex items-center justify-center rounded-md p-2 text-slate-300 hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="block h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

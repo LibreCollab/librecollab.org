@@ -1,0 +1,372 @@
+---
+
+---
+
+<main class="relative min-h-screen">
+  <!-- Background Spicy Bois -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div
+      class="absolute top-1/4 -left-40 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-1/4 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"
+    >
+    </div>
+  </div>
+
+  <div
+    class="relative z-10 flex items-center min-h-screen px-4 sm:px-6 lg:px-20 py-32"
+  >
+    <div class="max-w-7xl mx-auto w-full">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Slogan -->
+        <div class="space-y-6 lg:space-y-8">
+          <div class="space-y-4 lg:space-y-6">
+            <h1
+              class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight"
+            >
+              <span class="block">Blazingly fast</span>
+              <span class="block text-emerald-400">open source</span>
+              <span class="block"
+                >collaboration<span class="inline text-emerald-400">.</span
+                ></span
+              >
+            </h1>
+
+            <p
+              class="text-lg lg:text-xl text-slate-300 leading-relaxed max-w-2xl"
+            >
+              Join our passionate community of software engineers dedicated to
+              building impactful open source projects. We believe in the power
+              of collaboration to create tools that make the world a better
+              place.
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#projects"
+              class="inline-flex items-center justify-center px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg font-semibold text-white bg-emerald-600 rounded-lg hover:bg-emerald-500 transition-all duration-200 hover:scale-105 shadow-lg"
+            >
+              Explore Projects
+            </a>
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg font-semibold text-emerald-400 border-2 border-emerald-400 rounded-lg hover:bg-emerald-400 hover:text-slate-900 transition-all duration-200"
+            >
+              Join Community
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div
+            class="grid grid-cols-3 gap-4 lg:gap-8 pt-6 lg:pt-8 border-t border-white/10"
+          >
+            <div class="text-center">
+              <div class="text-xl lg:text-2xl font-bold text-emerald-400">
+                3+
+              </div>
+              <div class="text-xs lg:text-sm text-slate-400">
+                Active Projects
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-xl lg:text-2xl font-bold text-emerald-400">
+                3
+              </div>
+              <div class="text-xs lg:text-sm text-slate-400">Collaborators</div>
+            </div>
+            <div class="text-center">
+              <div class="text-xl lg:text-2xl font-bold text-emerald-400">
+                100%
+              </div>
+              <div class="text-xs lg:text-sm text-slate-400">Open Source</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Animated Terminal -->
+        <div class="lg:pl-8 mt-8 lg:mt-0">
+          <div class="relative">
+            <div
+              class="bg-slate-900 rounded-lg shadow-2xl border border-slate-700 overflow-hidden"
+            >
+              <!-- Terminal Header -->
+              <div
+                class="flex items-center justify-between px-4 py-3 bg-slate-800 border-b border-slate-700"
+              >
+                <div class="flex items-center space-x-2">
+                  <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                </div>
+                <div class="text-sm text-slate-400">maco's terminal</div>
+                <div class="w-16"></div>
+              </div>
+
+              <!-- Terminal Content -->
+              <div
+                id="terminal-container"
+                class="terminal-scrollbar p-4 lg:p-6 font-mono text-sm h-64 lg:h-80 overflow-y-auto overflow-x-hidden"
+              >
+                <div class="space-y-2 text-slate-300">
+                  <!-- Current Command Line -->
+                  <div class="flex items-center space-x-2">
+                    <span class="text-emerald-400 flex-shrink-0">$</span>
+                    <div class="relative flex-1 min-w-0">
+                      <span
+                        id="terminal-text"
+                        class="text-white break-all word-wrap"></span>
+                      <span
+                        id="cursor"
+                        class="absolute bg-emerald-400 w-2 h-4 animate-pulse"
+                        style="top: 0; left: 0;"></span>
+                    </div>
+                  </div>
+                  <div id="terminal-output" class="space-y-1 text-slate-400">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Code Snippets -->
+            <div
+              class="absolute -top-4 -right-4 bg-slate-800 rounded-lg p-3 shadow-lg border border-slate-600 animate-float hidden lg:block"
+            >
+              <div class="font-mono text-xs text-emerald-400">
+                git commit -m "feat: ✨"
+              </div>
+            </div>
+
+            <div
+              class="absolute -bottom-4 -left-4 bg-slate-800 rounded-lg p-3 shadow-lg border border-slate-600 animate-float-delayed hidden lg:block"
+            >
+              <div class="font-mono text-xs text-blue-400">npm publish</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  interface Command {
+    command: string;
+    output: string;
+  }
+
+  const initTerminalAnimation = () => {
+    const commands: Command[] = [
+      {
+        command: "git clone https://github.com/librecollab/project.git",
+        output: "Cloning into 'project'...",
+      },
+      { command: "cd project", output: "" },
+      { command: "npm install", output: "Installing dependencies..." },
+      {
+        command: "npm run dev",
+        output: "🚀 Server running on localhost:6969",
+      },
+      { command: "git add .", output: "" },
+      {
+        command: 'git commit -m "feat: new feature"',
+        output: "[main 1a2b3c4] feat: new feature",
+      },
+      {
+        command: "git push origin main",
+        output: "✅ Changes pushed successfully!",
+      },
+    ];
+
+    let currentCommandIndex = 0;
+    let currentCharIndex = 0;
+    const terminalText = document.getElementById("terminal-text");
+    const terminalOutput = document.getElementById("terminal-output");
+    const terminalContainer = document.getElementById("terminal-container");
+    const cursor = document.getElementById("cursor");
+
+    if (!terminalText || !terminalOutput || !cursor || !terminalContainer)
+      return;
+
+    const updateCursorPosition = () => {
+      if (!terminalText || !cursor || !terminalText.parentElement) return;
+
+      // Create a temporary element with the same styling and constraints as the terminal text
+      const tempElement = document.createElement("div");
+      tempElement.style.visibility = "hidden";
+      tempElement.style.position = "absolute";
+      tempElement.style.top = "-9999px";
+      tempElement.style.left = "-9999px";
+      tempElement.style.font = window.getComputedStyle(terminalText).font;
+      tempElement.style.width = window.getComputedStyle(
+        terminalText.parentElement
+      ).width;
+      tempElement.style.overflowWrap = "break-word";
+      tempElement.style.wordBreak = "break-all";
+      tempElement.style.whiteSpace = "pre-wrap";
+      tempElement.style.lineHeight =
+        window.getComputedStyle(terminalText).lineHeight;
+
+      tempElement.textContent = terminalText.textContent || "";
+
+      const marker = document.createElement("span");
+      marker.style.position = "relative";
+      tempElement.appendChild(marker);
+
+      document.body.appendChild(tempElement);
+
+      const markerRect = marker.getBoundingClientRect();
+      const tempRect = tempElement.getBoundingClientRect();
+
+      const relativeLeft = markerRect.left - tempRect.left;
+      const relativeTop = markerRect.top - tempRect.top;
+
+      document.body.removeChild(tempElement);
+
+      cursor.style.left = `${relativeLeft}px`;
+      cursor.style.top = `${relativeTop}px`;
+    };
+
+    const typeCommand = () => {
+      const currentCommand = commands[currentCommandIndex];
+
+      if (!currentCommand) {
+        return;
+      }
+
+      if (currentCharIndex < currentCommand.command.length) {
+        terminalText.textContent = currentCommand.command.slice(
+          0,
+          currentCharIndex + 1
+        );
+        updateCursorPosition();
+        currentCharIndex++;
+        setTimeout(typeCommand, 50 + Math.random() * 50);
+        return;
+      }
+
+      cursor.style.display = "none";
+
+      if (!currentCommand.output) {
+        nextCommand();
+        return;
+      }
+
+      setTimeout(() => addOutput(currentCommand), 500);
+    };
+
+    const addOutput = (currentCommand: Command) => {
+      const outputLine = document.createElement("div");
+      outputLine.textContent = currentCommand.output;
+      outputLine.className = "text-slate-400 break-all";
+      terminalOutput.appendChild(outputLine);
+
+      nextCommand();
+    };
+
+    const nextCommand = () => {
+      setTimeout(() => {
+        currentCommandIndex++;
+        currentCharIndex = 0;
+
+        if (currentCommandIndex >= commands.length) {
+          setTimeout(() => {
+            currentCommandIndex = 0;
+            terminalText.textContent = "";
+            terminalOutput.innerHTML = "";
+            cursor.style.display = "block";
+            cursor.style.left = "0px";
+            terminalContainer.scrollTop = 0;
+            typeCommand();
+          }, 3000);
+
+          return;
+        }
+
+        const promptLine = document.createElement("div");
+        promptLine.className = "flex items-center space-x-2";
+        promptLine.innerHTML =
+          '<span class="text-emerald-400 flex-shrink-0">$</span> <span class="break-all flex-1 min-w-0">' +
+          commands[currentCommandIndex - 1].command +
+          "</span>";
+        terminalOutput.appendChild(promptLine);
+
+        terminalText.textContent = "";
+        cursor.style.display = "block";
+        cursor.style.left = "0px";
+        typeCommand();
+      }, 1000);
+    };
+
+    typeCommand();
+  };
+
+  document.addEventListener("DOMContentLoaded", initTerminalAnimation);
+  document.addEventListener("astro:page-load", initTerminalAnimation);
+</script>
+
+<style>
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes float-delayed {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float-delayed 3s ease-in-out infinite 1.5s;
+  }
+
+  .terminal-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #475569 #1e293b;
+  }
+
+  .terminal-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .terminal-scrollbar::-webkit-scrollbar-track {
+    background: #1e293b;
+    border-radius: 3px;
+  }
+
+  .terminal-scrollbar::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+    transition: background 0.2s ease;
+  }
+
+  .terminal-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+  }
+
+  .terminal-scrollbar::-webkit-scrollbar-thumb:active {
+    background: #94a3b8;
+  }
+
+  .word-wrap {
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: pre-wrap;
+  }
+</style>

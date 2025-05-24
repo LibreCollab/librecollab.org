@@ -13,64 +13,199 @@ const siteName = "LibreCollab";
 >
   <div class="max-w-8xl mx-auto">
     <div
-      class="relative flex h-14 items-center justify-between rounded-xl px-4 text-slate-100 ring-1 ring-white/10 backdrop-blur-lg md:h-20 md:px-6"
+      id="header-container"
+      class="relative overflow-hidden rounded-xl text-slate-100 ring-1 ring-white/10 backdrop-blur-lg transition-all duration-300 ease-in-out"
     >
-      <div class="flex flex-shrink-0 items-center">
-        <a href="/" class="flex items-center gap-x-2.5">
-          <img class="h-7 w-auto md:h-13" src={logoUrl} alt={siteName} />
-          <span class="text-xl font-bold tracking-tight text-white md:text-2xl">
-            {siteName}
-          </span>
-        </a>
+      <div class="flex h-14 items-center justify-between px-4 md:h-20 md:px-6">
+        <div class="flex flex-shrink-0 items-center">
+          <a href="/" class="flex items-center gap-x-2.5">
+            <img class="h-7 w-auto md:h-13" src={logoUrl} alt={siteName} />
+            <span
+              class="text-xl font-bold tracking-tight text-white md:text-2xl"
+            >
+              {siteName}
+            </span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden items-center md:flex">
+          <ul
+            class="flex items-center space-x-1 text-lg font-medium lg:space-x-2"
+          >
+            {
+              navLinks.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="rounded-md px-3 py-2 text-slate-300 transition-colors duration-200 hover:text-white"
+                  >
+                    {link.text}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+          <a
+            href="#contact"
+            class="ml-3 rounded-lg bg-emerald-700 px-4 py-2 text-lg font-semibold text-white shadow-md transition-all duration-200 hover:bg-emerald-600 hover:shadow-lg md:px-5 md:py-2.5 lg:ml-4"
+          >
+            Contact
+          </a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <div class="flex items-center md:hidden">
+          <button
+            type="button"
+            id="mobile-menu-button"
+            class="inline-flex items-center justify-center rounded-md p-2 text-slate-300 hover:bg-slate-700/50 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition-colors duration-200"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              id="hamburger-icon"
+              class="block h-6 w-6 transition-transform duration-200"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg
+              id="close-icon"
+              class="hidden h-6 w-6 transition-transform duration-200"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
       </div>
-      <nav class="hidden items-center md:flex">
-        <ul
-          class="flex items-center space-x-1 text-lg font-medium lg:space-x-2"
-        >
-          {
-            navLinks.map((link) => (
-              <li>
+
+      <!-- Mobile Menu - Inside the header container -->
+      <div
+        id="mobile-menu"
+        class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out md:hidden"
+      >
+        <div>
+          <nav class="px-4 py-6 space-y-1">
+            {
+              navLinks.map((link) => (
                 <a
                   href={link.href}
-                  class="rounded-md px-3 py-2 text-slate-300 transition-colors duration-200 hover:text-white"
+                  class="block rounded-md px-3 py-3 text-lg font-medium text-slate-300 transition-colors duration-200 hover:bg-slate-700/30 hover:text-white"
                 >
                   {link.text}
                 </a>
-              </li>
-            ))
-          }
-        </ul>
-        <a
-          href="#contact"
-          class="ml-3 rounded-lg bg-emerald-700 px-4 py-2 text-lg font-semibold text-white shadow-md transition-all duration-200 hover:bg-emerald-600 hover:shadow-lg md:px-5 md:py-2.5 lg:ml-4"
-        >
-          Contact
-        </a>
-      </nav>
-      <div class="flex items-center md:hidden">
-        <button
-          type="button"
-          class="inline-flex items-center justify-center rounded-md p-2 text-slate-300 hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-          aria-controls="mobile-menu"
-          aria-expanded="false"
-        >
-          <span class="sr-only">Open main menu</span>
-          <svg
-            class="block h-6 w-6"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
+              ))
+            }
+            <div class="pt-3">
+              <a
+                href="#contact"
+                class="block w-full rounded-lg bg-emerald-700 px-4 py-3 text-center text-lg font-semibold text-white shadow-md transition-all duration-200 hover:bg-emerald-600 hover:shadow-lg"
+              >
+                Contact
+              </a>
+            </div>
+          </nav>
+        </div>
       </div>
     </div>
   </div>
 </header>
+
+<script>
+  const initMobileMenu = () => {
+    const menuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const headerContainer = document.getElementById("header-container");
+    const hamburgerIcon = document.getElementById("hamburger-icon");
+    const closeIcon = document.getElementById("close-icon");
+
+    if (
+      !menuButton ||
+      !mobileMenu ||
+      !headerContainer ||
+      !hamburgerIcon ||
+      !closeIcon
+    ) {
+      return;
+    }
+
+    let isMenuOpen = false;
+
+    const toggleMenu = () => {
+      if (!mobileMenu || !hamburgerIcon || !closeIcon || !menuButton) {
+        return;
+      }
+
+      isMenuOpen = !isMenuOpen;
+
+      if (isMenuOpen) {
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+        hamburgerIcon.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+        menuButton.setAttribute("aria-expanded", "true");
+      } else {
+        mobileMenu.style.maxHeight = "0px";
+        hamburgerIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+        menuButton.setAttribute("aria-expanded", "false");
+      }
+    };
+
+    menuButton.addEventListener("click", toggleMenu);
+
+    document.addEventListener("click", (event) => {
+      const target = event.target as Element;
+      if (isMenuOpen && headerContainer && !headerContainer.contains(target)) {
+        toggleMenu();
+      }
+    });
+
+    if (mobileMenu) {
+      const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (isMenuOpen) {
+            toggleMenu();
+          }
+        });
+      });
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && isMenuOpen) {
+        toggleMenu();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768 && isMenuOpen) {
+        toggleMenu();
+      }
+    });
+  };
+
+  // Initialize on page load
+  document.addEventListener("DOMContentLoaded", initMobileMenu);
+
+  // Re-initialize after navigation (for SPA-like behavior)
+  document.addEventListener("astro:page-load", initMobileMenu);
+</script>

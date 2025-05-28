@@ -16,7 +16,6 @@
       class="absolute top-2/3 right-1/4 w-64 h-64 bg-purple-500/6 rounded-full blur-3xl animate-pulse"
     >
     </div>
-
   </div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
@@ -39,15 +38,23 @@
       >
         <div class="p-6">
           <div class="flex items-center justify-between mb-4">
-            <span
-              class="px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-400 rounded-full"
-            >
-              WEB APP
-            </span>
+            <div class="flex space-x-2">
+              <span
+                class="px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-400 rounded-full"
+              >
+                WEB APP
+              </span>
+              <span
+                class="px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-400 rounded-full"
+              >
+                MOBILE APP
+              </span>
+            </div>
             <div class="flex space-x-2">
               <a
-                href="#"
+                href="https://obrok.net"
                 class="text-slate-400 hover:text-emerald-400 transition-colors"
+                target="_blank"
               >
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path
@@ -59,8 +66,9 @@
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://github.com/LibreCollab/student-obrok"
                 class="text-slate-400 hover:text-emerald-400 transition-colors"
+                target="_blank"
               >
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path
@@ -75,34 +83,48 @@
           <h3
             class="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors"
           >
-            CollabFlow
+            Student Obrok
           </h3>
 
           <p class="text-slate-300 text-sm mb-4 leading-relaxed">
-            A revolutionary collaboration platform that transforms how open
-            source teams work together. Features real-time code collaboration,
-            project management, and community building tools. Built with
-            scalability and developer experience in mind.
+            A web app that displays affordable student meal deals on an
+            interactive map. It's your go-to guide for budget-friendly dining
+            around your location.
           </p>
-
-          <!-- Tech Stack -->
           <div class="flex flex-wrap gap-2 mb-4">
             <span class="px-2 py-1 text-xs bg-slate-800 text-slate-300 rounded"
               >React</span
             >
             <span class="px-2 py-1 text-xs bg-slate-800 text-slate-300 rounded"
-              >TypeScript</span
+              >JavaScript</span
             >
             <span class="px-2 py-1 text-xs bg-slate-800 text-slate-300 rounded"
-              >Node.js</span
+              >Express.js</span
             >
             <span class="px-2 py-1 text-xs bg-slate-800 text-slate-300 rounded"
-              >PostgreSQL</span
+              >MongoDB</span
             >
           </div>
 
+          <div class="flex space-x-2">
+            <a
+              class="flex-1 bg-slate-800 cursor-not-allowed rounded p-2 text-center"
+              target="_blank"
+            >
+              <div class="text-xs text-slate-400">iOS</div>
+              <div class="text-xs font-bold text-emerald-400">App Store</div>
+            </a>
+            <a
+              class="flex-1 bg-slate-800 cursor-not-allowed rounded p-2 text-center"
+              target="_blank"
+            >
+              <div class="text-xs text-slate-400">Android</div>
+              <div class="text-xs font-bold text-emerald-400">Play Store</div>
+            </a>
+          </div>
+
           <!-- Mock Screenshot -->
-          <div class="bg-slate-800 rounded-lg p-4 border border-slate-600 mb-4">
+          <!-- <div class="bg-slate-800 rounded-lg p-4 border border-slate-600 mb-4">
             <div
               class="bg-gradient-to-br from-emerald-500 to-blue-500 rounded h-32 opacity-20 flex items-center justify-center"
             >
@@ -120,10 +142,10 @@
                 ></path>
               </svg>
             </div>
-          </div>
+          </div> -->
 
           <!-- Stats -->
-          <div class="grid grid-cols-3 gap-4 text-center text-xs">
+          <!-- <div class="grid grid-cols-3 gap-4 text-center text-xs">
             <div>
               <div class="font-bold text-emerald-400">2.1k</div>
               <div class="text-slate-400">Stars</div>
@@ -136,12 +158,12 @@
               <div class="font-bold text-emerald-400">12</div>
               <div class="text-slate-400">Contributors</div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
 
       <!-- Project Card 2 - DevTools CLI (Medium) -->
-      <div
+      <!-- <div
         class="break-inside-avoid bg-slate-900/50 rounded-xl border border-slate-700 overflow-hidden hover:border-blue-500/50 transition-all duration-300 group"
       >
         <div class="p-6">
@@ -190,7 +212,6 @@
             >
           </div>
 
-          <!-- Terminal Preview -->
           <div
             class="bg-slate-950 rounded-lg p-3 border border-slate-600 font-mono text-xs"
           >
@@ -198,9 +219,9 @@
             <div class="text-slate-400">✅ Project created successfully!</div>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <!-- Project Card 3 - ReactUI Library (Short) -->
+      <!-- Project Card 3 - Librebot (Short) -->
       <div
         class="break-inside-avoid bg-slate-900/50 rounded-xl border border-slate-700 overflow-hidden hover:border-purple-500/50 transition-all duration-300 group"
       >
@@ -209,25 +230,13 @@
             <span
               class="px-3 py-1 text-xs font-medium bg-purple-500/10 text-purple-400 rounded-full"
             >
-              UI LIBRARY
+              BOT
             </span>
             <div class="flex space-x-2">
               <a
-                href="#"
+                href="https://github.com/LibreCollab/libre-bot"
                 class="text-slate-400 hover:text-purple-400 transition-colors"
-              >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"
-                  ></path>
-                  <path
-                    d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
-                  ></path>
-                </svg>
-              </a>
-              <a
-                href="#"
-                class="text-slate-400 hover:text-purple-400 transition-colors"
+                target="_blank"
               >
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path
@@ -242,30 +251,32 @@
           <h3
             class="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors"
           >
-            FlexUI Components
+            libreBot
           </h3>
 
           <p class="text-slate-300 text-sm mb-4">
-            Modern, accessible React component library with customizable themes
-            and TypeScript support.
+            A versatile Discord bot built to serve the LibreCollab community. It
+            offers a range of utilities and fun commands, with new features
+            being added over time. One of its key features is a Hetzner Server
+            Auction notifier.
           </p>
 
           <div class="flex flex-wrap gap-2">
             <span class="px-2 py-1 text-xs bg-slate-800 text-slate-300 rounded"
-              >React</span
+              >Discord.js</span
             >
             <span class="px-2 py-1 text-xs bg-slate-800 text-slate-300 rounded"
-              >Storybook</span
+              >JavaScript</span
             >
             <span class="px-2 py-1 text-xs bg-slate-800 text-slate-300 rounded"
-              >Tailwind</span
+              >MongoDB</span
             >
           </div>
         </div>
       </div>
 
       <!-- Project Card 4 - API Gateway (Tall) -->
-      <div
+      <!-- <div
         class="break-inside-avoid bg-slate-900/50 rounded-xl border border-slate-700 overflow-hidden hover:border-orange-500/50 transition-all duration-300 group"
       >
         <div class="p-6">
@@ -321,7 +332,6 @@
             >
           </div>
 
-          <!-- Performance Metrics -->
           <div class="bg-slate-800 rounded-lg p-4 border border-slate-600 mb-4">
             <div class="text-xs text-slate-400 mb-2">Performance</div>
             <div class="space-y-2">
@@ -347,10 +357,10 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Project Card 5 - Mobile App (Medium) -->
-      <div
+      <!-- <div
         class="break-inside-avoid bg-slate-900/50 rounded-xl border border-slate-700 overflow-hidden hover:border-pink-500/50 transition-all duration-300 group"
       >
         <div class="p-6">
@@ -411,8 +421,6 @@
               >Firebase</span
             >
           </div>
-
-          <!-- App Store Links -->
           <div class="flex space-x-2">
             <div class="flex-1 bg-slate-800 rounded p-2 text-center">
               <div class="text-xs text-slate-400">iOS</div>
@@ -424,10 +432,10 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Project Card 6 - AI/ML Tool (Medium-Tall) -->
-      <div
+      <!-- <div
         class="break-inside-avoid bg-slate-900/50 rounded-xl border border-slate-700 overflow-hidden hover:border-cyan-500/50 transition-all duration-300 group"
       >
         <div class="p-6">
@@ -484,7 +492,6 @@
             >
           </div>
 
-          <!-- AI Metrics -->
           <div class="bg-slate-800 rounded-lg p-4 border border-slate-600 mb-4">
             <div class="text-xs text-slate-400 mb-2">AI Performance</div>
             <div class="space-y-2">
@@ -503,7 +510,7 @@
             Trained on 50M+ lines of code from open source repositories
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>

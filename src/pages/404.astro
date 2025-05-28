@@ -1,0 +1,246 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>404 - Page Not Found | LibreCollab</title>
+    <meta
+      name="description"
+      content="The page you're looking for doesn't exist."
+    />
+  </head>
+  <body class="bg-slate-950 text-white">
+    <main
+      class="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
+      <div class="absolute inset-0">
+        <div
+          class="absolute top-1/4 -left-40 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"
+        >
+        </div>
+        <div
+          class="absolute bottom-1/4 -right-40 w-96 h-96 bg-blue-500/8 rounded-full blur-3xl animate-pulse"
+          style="animation-delay: 1s;"
+        >
+        </div>
+        <div
+          class="absolute top-2/3 left-1/3 w-64 h-64 bg-purple-500/6 rounded-full blur-3xl animate-pulse"
+          style="animation-delay: 2s;"
+        >
+        </div>
+        <div
+          class="absolute top-1/6 right-1/4 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl animate-pulse"
+          style="animation-delay: 3s;"
+        >
+        </div>
+      </div>
+      <div
+        class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+      >
+        <div class="mb-8">
+          <div class="relative">
+            <h1
+              class="text-8xl sm:text-9xl lg:text-[12rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 leading-none mb-4 select-none"
+            >
+              404
+            </h1>
+            <div
+              class="absolute inset-0 text-8xl sm:text-9xl lg:text-[12rem] font-bold text-red-500/20 leading-none animate-glitch"
+            >
+              404
+            </div>
+            <div
+              class="absolute inset-0 text-8xl sm:text-9xl lg:text-[12rem] font-bold text-cyan-500/20 leading-none animate-glitch-2"
+            >
+              404
+            </div>
+          </div>
+        </div>
+        <div class="mb-12">
+          <h2
+            class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4"
+          >
+            Oops! Page not <span class="text-emerald-400">found</span>
+          </h2>
+          <p class="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            Looks like this page got lost in the digital void. Don't worry
+            though, maco is probably debugging this as we speak.
+          </p>
+        </div>
+        <div class="mb-12 max-w-2xl mx-auto">
+          <div
+            class="bg-slate-900/80 rounded-lg border border-slate-700 overflow-hidden"
+          >
+            <div
+              class="flex items-center justify-between px-4 py-3 bg-slate-800 border-b border-slate-700"
+            >
+              <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+              </div>
+              <div class="text-sm text-slate-400">error.log</div>
+              <div class="w-16"></div>
+            </div>
+            <div class="p-4 font-mono text-sm">
+              <div class="space-y-2">
+                <div class="text-red-400">ERROR 404: Resource not found</div>
+                <div class="text-slate-400">
+                  at Route.handler (/src/pages/unknown.astro)
+                </div>
+                <div class="text-slate-400">
+                  at Router.resolve (/router/index.js:127:15)
+                </div>
+                <div class="text-emerald-400">
+                  SUGGESTION: Try navigating back to safety
+                </div>
+                <div class="text-slate-500">
+                  // TODO: Implement better error handling 😅
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+        >
+          <a
+            href="/"
+            class="inline-flex items-center px-6 py-3 text-lg font-semibold text-white bg-emerald-600 rounded-lg hover:bg-emerald-500 transition-all duration-200 hover:scale-105 shadow-lg"
+          >
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              ></path>
+            </svg>
+            Back to Home
+          </a>
+
+          <button
+            onclick="history.back()"
+            class="inline-flex items-center px-6 py-3 text-lg font-semibold text-emerald-400 border-2 border-emerald-400 rounded-lg hover:bg-emerald-400 hover:text-slate-900 transition-all duration-200"
+          >
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+            Go Back
+          </button>
+        </div>
+        <div
+          class="text-slate-600 font-mono text-xs leading-tight hidden lg:block"
+        >
+          <pre>
+        ¯\_(ツ)_/¯
+      404 - Not Found
+    But hey, at least the 
+    design looks good!
+          </pre>
+        </div>
+        <div class="mt-12 pt-8 border-t border-slate-800">
+          <p class="text-slate-400 text-sm mb-4">Need help? Try these links:</p>
+          <div class="flex flex-wrap justify-center gap-6 text-sm">
+            <a
+              href="/#projects"
+              class="text-emerald-400 hover:text-emerald-300 transition-colors"
+            >
+              View Projects
+            </a>
+            <a
+              href="/#how-we-work"
+              class="text-emerald-400 hover:text-emerald-300 transition-colors"
+            >
+              How We Work
+            </a>
+            <a
+              href="/#contact"
+              class="text-emerald-400 hover:text-emerald-300 transition-colors"
+            >
+              Contact Us
+            </a>
+            <a
+              href="https://github.com/librecollab"
+              class="text-emerald-400 hover:text-emerald-300 transition-colors"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <style>
+      @keyframes glitch {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        20% {
+          transform: translateX(-2px);
+        }
+        40% {
+          transform: translateX(2px);
+        }
+        60% {
+          transform: translateX(-1px);
+        }
+        80% {
+          transform: translateX(1px);
+        }
+      }
+
+      @keyframes glitch-2 {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        10% {
+          transform: translateX(2px);
+        }
+        30% {
+          transform: translateX(-2px);
+        }
+        50% {
+          transform: translateX(1px);
+        }
+        70% {
+          transform: translateX(-1px);
+        }
+        90% {
+          transform: translateX(2px);
+        }
+      }
+
+      .animate-glitch {
+        animation: glitch 2s infinite;
+        animation-delay: 0.1s;
+      }
+
+      .animate-glitch-2 {
+        animation: glitch-2 2s infinite;
+        animation-delay: 0.2s;
+      }
+    </style>
+  </body>
+</html>
